@@ -1,0 +1,21 @@
+<h1>Index de Movies</h1>
+
+<h2>Regular Movies</h2>
+<% @regular_movies.each do |movie| %>
+<p><%= "#{movie.name} /  #{movie.year}" %>
+<%= link_to 'Show', movie %>
+<%= link_to 'Edit', edit_movie_path(movie) %>
+<%= link_to 'Delete', movie, method: :delete, data: { confirm: 'Are û sure mah dude?'} %>
+<%= button_to 'Like', favorite_movie_path(movie), method: :patch, class:'btn btn-outline-warning btn-sm' %></p>
+<% end %>
+
+<h2>Favorite Movies</h2>
+<% @favorite_movies.each do |movie| %>
+<p><%= "#{movie.name} /  #{movie.year}" %>
+<%= link_to 'Show', movie %>
+<%= link_to 'Edit', edit_movie_path(movie) %>
+<%= link_to 'Delete', movie, method: :delete, data: { confirm: 'Are û sure mah dude?'} %>
+<%= button_to 'd1slike', favorite_movie_path(movie), method: :patch, class:'btn btn-outline-danger btn-sm' %></p>
+<% end %>
+
+<%= link_to "Create movie", movies_new_path %>

@@ -1,0 +1,16 @@
+<div class="row">
+<%= form_with(model: movie, local: true) do |f| %>
+<div class="col-lg-4">
+<%= f.label :name %>
+<%= f.text_field :name %>
+</div>
+<div class="col-lg-4">
+<%= f.label :year %>
+<%= f.number_field :year %>
+</div>
+<%= f.submit %>
+
+<% end %>
+
+<%= link_to "<< Back", movies_path %>
+</div>
